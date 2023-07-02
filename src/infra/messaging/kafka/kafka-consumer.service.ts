@@ -1,6 +1,9 @@
 import { Injectable, OnModuleDestroy } from '@nestjs/common';
 import { ServerKafka } from '@nestjs/microservices';
 
+//documentação https://docs.nestjs.com/microservices/kafka
+//implementar futuramente
+
 @Injectable()
 export class KafkaConsumerService
   extends ServerKafka
@@ -13,10 +16,8 @@ export class KafkaConsumerService
         brokers: ['stirred-bream-9626-us1-kafka.upstash.io:9092'],
         sasl: {
           mechanism: 'scram-sha-256',
-          username:
-            'c3RpcnJlZC1icmVhbS05NjI2JP2jGZobUfgOvOJRt4BKE7U2ACdlOBKC3bMvgEk',
-          password:
-            'H4nly5QgkjLn2n3y2_9CLRKLdWPUw8ttXPwqBrladJfdawcBIk0PPMWLrcofbp3-i2Ynhg==',
+          username: 'iduser',
+          password: 'password',
         },
         ssl: true,
       },
