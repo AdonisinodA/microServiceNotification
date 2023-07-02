@@ -1,13 +1,12 @@
-import { Content } from './content';
 import { Notification } from './notification';
-import { randomUUID } from 'node:crypto';
+import { Content } from './content';
 
 describe('Notification', () => {
-  test('deve ser possível criar notificação', () => {
+  it('should be able to create a notification', () => {
     const notification = new Notification({
-      content: new Content('New solicitation'),
-      category: 'test',
-      recipientId: randomUUID(),
+      content: new Content('Nova solicitação de amizade'),
+      category: 'social',
+      recipientId: 'example-recipient-id',
     });
 
     expect(notification).toBeTruthy();

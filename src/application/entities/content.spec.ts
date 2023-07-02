@@ -1,19 +1,17 @@
 import { Content } from './content';
 
 describe('Notification Content', () => {
-  test('deve ser possível criar o conteúdo da notificação', () => {
-    const content = new Content(
-      'Deve existir mais de 5 caracteres e menos que 255 ',
-    );
+  it('should be able to create a notification content', () => {
+    const content = new Content('Você recebeu uma solicitação de amizade');
 
-    expect(content).toBeTruthy(); // verificar se o contéudo é verdadeiro, sem strick mode
+    expect(content).toBeTruthy();
   });
 
-  test('Não deve ser possível criar um content com menos de 5 caracteres', () => {
-    expect(() => new Content('FA')).toThrow(); // expectativa de retornar throw
+  it('should not be able to create a notification content with less than 5 characters', () => {
+    expect(() => new Content('aaa')).toThrow();
   });
 
-  test('Não deve conter mais que 240 carateres', () => {
-    expect(() => new Content('a'.repeat(250))).toThrow();
+  it('should not be able to create a notification content with more than 240 characters', () => {
+    expect(() => new Content('a'.repeat(241))).toThrow();
   });
 });
